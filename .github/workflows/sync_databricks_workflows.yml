@@ -1,0 +1,20 @@
+name: sync_databricks_workflows
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  sync_jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+      - name: Sync Jobs
+        env:
+          DATABRICKS_WORKSPACE_URL: ${{ secrets.DATABRICKS_WORKSPACE_URL }}
+          DATABRICKS_WORKSPACE_TOKEN: ${{ secrets.DATABRICKS_WORKSPACE_TOKEN }}
+        working-directory: workflows
+        run: python sync_jobs.py
