@@ -3,7 +3,12 @@ resources:
     sample_etl:
       name: sample_etl
       tasks:
-        - task_key: sample_etl
+        - task_key: sample_etl1
+          notebook_task:
+            notebook_path: feature_store/sample_etl
+            source: GIT
+          job_cluster_key: Job_cluster
+        - task_key: sample_etl2
           notebook_task:
             notebook_path: feature_store/sample_etl
             source: GIT
