@@ -17,3 +17,19 @@ targets:
     default: true
     workspace:
       host: https://airmiles-ai-prod.cloud.databricks.com
+
+  # The 'prod' target, used for production deployment.
+  prod:
+    # For production deployments, we only have a single copy, so we override the
+    # workspace.root_path default of
+    # /Users/${workspace.current_user.userName}/.bundle/${bundle.target}/${bundle.name}
+    # to a path that is not specific to the current user.
+    mode: production
+    workspace:
+      host: https://airmiles-ai-prod.cloud.databricks.com
+      root_path: /Shared/.bundle/prod/${bundle.name}
+    run_as:
+      # This runs as NComuni@loyalty.com in production. Alternatively,
+      # a service principal could be used here using service_principal_name
+      # (see Databricks documentation).
+      user_name: NComuni@loyalty.com
