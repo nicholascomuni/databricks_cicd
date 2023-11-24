@@ -20,9 +20,6 @@ jobs:
 
       - uses: databricks/setup-cli@main
 
-      - name: Echo a secret  
-        run: echo "your secret token is ${{ secrets.DB_TOKEN }}"
-
       - run: databricks bundle deploy
         env:
           DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
