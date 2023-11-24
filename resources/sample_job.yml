@@ -1,0 +1,32 @@
+resources:
+  jobs:
+    sample_etl:
+      name: sample_etl
+      tasks:
+        - task_key: sample_etl
+          notebook_task:
+            notebook_path: feature_store/sample_etl
+            source: GIT
+          job_cluster_key: Job_cluster
+      job_clusters:
+        - job_cluster_key: Job_cluster
+          new_cluster:
+            spark_version: 13.3.x-scala2.12
+            aws_attributes:
+              first_on_demand: 1
+              availability: SPOT_WITH_FALLBACK
+              zone_id: ca-central-1a
+              instance_profile_arn: arn:aws:iam::208213028969:instance-profile/prod-datalake-roles-v2-DataSciencePipelineIP-1H5MLPZ19Q0JI
+              spot_bid_price_percent: 100
+              ebs_volume_count: 0
+            node_type_id: i3.xlarge
+            spark_env_vars:
+              PYSPARK_PYTHON: /databricks/python3/bin/python3
+            enable_elastic_disk: false
+            data_security_mode: LEGACY_SINGLE_USER_STANDARD
+            runtime_engine: PHOTON
+            num_workers: 1
+      git_source:
+        git_url: https://github.com/nicholascomuni/databricks_cd
+        git_provider: gitHub
+        git_branch: dev
