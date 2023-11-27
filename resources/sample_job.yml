@@ -7,6 +7,8 @@ resources:
           notebook_task:
             notebook_path: feature_store/sample_etl
             source: GIT
+            base_parameters:
+              OUTPUT_PATH: 's3a://prod-l1-datalake-v1-scratch/datasci/personal/NComuni/partner_recommendation_model/training_df'
           job_cluster_key: Job_cluster
         - task_key: sample_etl2
           notebook_task:
