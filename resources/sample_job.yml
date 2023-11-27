@@ -1,7 +1,7 @@
 resources:
   jobs:
     sample_etl:
-      name: sample_etl
+      name: '[${bundle.target}] sample_etl'
       tasks:
         - task_key: sample_etl1
           notebook_task:
