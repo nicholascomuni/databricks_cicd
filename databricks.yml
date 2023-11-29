@@ -1,15 +1,15 @@
 # This is a Databricks asset bundle definition for sampleproject.
 # See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
 bundle:
-  name: sampleproject
+  name: partner_recommendation_engine
 
 include:
   - resources/*.yml
 
 targets:
   feature:
-    mode: development
     default: true
+    mode: development
     workspace:
       host: https://airmiles-ai-prod.cloud.databricks.com
   # The 'dev' target, used for development purposes.
