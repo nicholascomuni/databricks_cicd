@@ -15,6 +15,11 @@ resources:
             notebook_path: feature_store/sample_etl
             source: GIT
           job_cluster_key: Job_cluster
+        - task_key: sample_etl3
+          notebook_task:
+            notebook_path: feature_store/sample_etl
+            source: GIT
+          job_cluster_key: Job_cluster
       job_clusters:
         - job_cluster_key: Job_cluster
           new_cluster:
