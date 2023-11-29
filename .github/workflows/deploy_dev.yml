@@ -20,7 +20,7 @@ jobs:
 
       - uses: databricks/setup-cli@main
 
-      - run: databricks bundle deploy
+      - run: databricks bundle deploy -t dev
         env:
           DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
           DATABRICKS_BUNDLE_ENV: dev
