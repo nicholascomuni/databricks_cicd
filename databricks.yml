@@ -20,6 +20,7 @@ targets:
     # automatic triggers for jobs and enables the 'development' mode for Delta Live Tables pipelines.
     workspace:
       host: https://airmiles-ai-prod.cloud.databricks.com
+      
 
   # The 'prod' target, used for production deployment.
   prod:
