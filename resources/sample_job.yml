@@ -1,11 +1,13 @@
 resources:
   jobs:
     sample_etl:
-      name: '[${bundle.target}] sample_etl'
+      name: sample_etl_${bundle.target}
       tasks:
         - task_key: sample_etl1
           notebook_task:
             notebook_path: feature_store/sample_etl
+            base_parameters:
+              OUTPUT_PATH: s3a://prod-l1-datalake-v1-scratch/datasci/personal/NComuni/partner_recommendation_model/training_df
             source: GIT
           job_cluster_key: Job_cluster
         - task_key: sample_etl2

@@ -1,0 +1,26 @@
+name: Deploy to feature
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - 'feature/*'
+    paths:
+      - "**/*.yml"
+      - "**/*.py"
+
+jobs:
+  deploy:
+    name: "Deploy bundle"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: databricks/setup-cli@main
+
+      - run: databricks bundle deploy
+        env:
+          DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
+          DATABRICKS_BUNDLE_ENV: dev
