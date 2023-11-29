@@ -20,6 +20,11 @@ resources:
             notebook_path: feature_store/sample_etl
             source: GIT
           job_cluster_key: Job_cluster
+        - task_key: sample_etl4
+          notebook_task:
+            notebook_path: feature_store/sample_etl
+            source: GIT
+          job_cluster_key: Job_cluster
       job_clusters:
         - job_cluster_key: Job_cluster
           new_cluster:
@@ -43,6 +48,5 @@ resources:
         git_provider: gitHub
         git_branch: ${bundle.git.branch}
       tags:
-        partner_recommendation_engine: ""
+        project: ${bundle.name}
         git_branch: ${bundle.git.branch}
-        git_commit: ${bundle.git.commit}
