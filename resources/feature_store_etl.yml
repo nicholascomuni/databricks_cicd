@@ -1,6 +1,6 @@
 resources:
   jobs:
-    sample_etl:
+    feature_store_etl:
       name: ${bundle.name}.feature_store_etl (${bundle.target})
       tasks:
         - task_key: sample_etl1
@@ -42,3 +42,5 @@ resources:
         git_url: https://github.com/nicholascomuni/databricks_cicd
         git_provider: gitHub
         git_branch: dev
+      tags:
+        partner_recommendation_engine: ""
