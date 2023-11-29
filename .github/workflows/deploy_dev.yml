@@ -24,3 +24,8 @@ jobs:
         env:
           DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
           DATABRICKS_BUNDLE_ENV: dev
+
+      - run: databricks bundle run feature_store_etl -t dev
+        env:
+            DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
+            DATABRICKS_BUNDLE_ENV: dev
