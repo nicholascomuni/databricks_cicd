@@ -1,7 +1,7 @@
 resources:
   jobs:
     sample_etl:
-      name: sample_etl_${bundle.target}
+      name: ${bundle.name}.training_pipeline (${bundle.target})
       tasks:
         - task_key: sample_etl1
           notebook_task:
