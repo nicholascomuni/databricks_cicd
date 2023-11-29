@@ -18,7 +18,6 @@ targets:
     # We use 'mode: development' to make sure everything deployed to this target gets a prefix
     # like '[dev my_user_name]'. Setting this mode also disables any schedules and
     # automatic triggers for jobs and enables the 'development' mode for Delta Live Tables pipelines.
-    mode: development
     workspace:
       host: https://airmiles-ai-prod.cloud.databricks.com
 
