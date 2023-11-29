@@ -1,11 +1,11 @@
-name: Deploy to dev
+name: Deploy to feature
 
 on:
   workflow_dispatch:
 
   push:
     branches:
-      - dev
+      - 'feature/*'
     paths:
       - "**/*.yml"
       - "**/*.py"
@@ -20,7 +20,7 @@ jobs:
 
       - uses: databricks/setup-cli@main
 
-      - run: databricks bundle deploy -t dev
+      - run: databricks bundle deploy -t feature
         env:
           DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
-          DATABRICKS_BUNDLE_ENV: dev
+          DATABRICKS_BUNDLE_ENV: feature
