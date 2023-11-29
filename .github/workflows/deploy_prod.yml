@@ -26,3 +26,6 @@ jobs:
           DATABRICKS_BUNDLE_ENV: prod
 
       - run: databricks bundle run feature_store_etl -t prod
+        env:
+          DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
+          DATABRICKS_BUNDLE_ENV: prod
