@@ -43,6 +43,5 @@ resources:
         git_provider: gitHub
         git_branch: ${bundle.git.branch}
       tags:
-        partner_recommendation_engine: ""
+        project: ${bundle.name}
         git_branch: ${bundle.git.branch}
-        git_commit: ${bundle.git.commit}
